@@ -7,26 +7,26 @@ int main(void)
 {
     // print all primes in a given range
 
-    int start_range = get_int("Minimum: ");
+    int start_of_range = get_int("Minimum: ");
 
-    if (start_range == 1)
+    if (start_of_range == 1)
     {
         // one isn't prime, skip it
-        start_range++;
+        start_of_range++;
     }
 
-    if (start_range % 2 == 0 && start_range != 2)
+    if (start_of_range % 2 == 0 && start_of_range != 2)
     {
         // if the first number is even - its not prime (except for two) so skip it so that we can go through odd numbers only in a loop with i += 2
-        start_range++;
+        start_of_range++;
     }
 
-    int end_range = get_int("Maximum: ");
+    int end_of_range = get_int("Maximum: ");
 
-    for (int i = start_range; i <= end_range; i += 2) {
+    for (int i = start_of_range; i <= end_of_range; i += 2) {
         // go through the range
         // we skip all even numbers, because all even numbers are not prime
-        bool isPrime = true;
+        bool is_prime = true;
 
         if (i == 2)
         {
@@ -45,11 +45,11 @@ int main(void)
             if (i % j == 0 && i != j)
             {
                 // if there is a divisor other than 1 and self
-                isPrime = false;
+                is_prime = false;
             }
         }
 
-        if (isPrime == true)
+        if (is_prime == true)
         {
             printf("%i\n", i);
         }
