@@ -43,6 +43,7 @@ int main(int argc, string argv[])
     }
 
     char initial_input = argv[1][0];
+    // Converstion to int from char
     int input = (int) initial_input - (int) '0';
     if (input != 5 && input != 6 && input != 7 && input != 8)
     {
@@ -104,7 +105,7 @@ int main(int argc, string argv[])
         // Print the guess
         print_word(guess, wordsize, status);
 
-        // if they guessed it exactly right, set terminate loop
+        // If they guessed it exactly right, terminate loop
         if (score == EXACT * wordsize)
         {
             won = true;
